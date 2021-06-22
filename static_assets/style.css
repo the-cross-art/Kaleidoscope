@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic');
+
+/************************************* Web Loading **************************************************/
+.loading {
+    position: fixed;
+    width: 110px;
+    height: 60px;
+    top: calc(50% - 30px);
+    left: calc(50% - 55px);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: black;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    border: 3px solid rgb(255, 255, 255);
+    cursor: default;
+
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.loader {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid rgba(128, 128, 128, 0.37);
+    border-right: 6px solid rgba(225, 225, 225, 0.58);
+    width: 12px;
+    height: 12px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/************************************* Web Localization **************************************************/
+
+.localization-buttons {
+    position: fixed;
+    left: calc(100% - 68px);
+    top: calc(60%);
+}
+
+.localization-button {
+    width: 50px;
+    height: 50px;
+    opacity: 0.65;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    margin: 2px;
+    border: 3px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    pointer-events: initial;
+}
+
+.localization-button p {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+/************************************* Web Information **************************************************/
+.media-container {
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: default;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    font-family: "Open Sans", sans-serif;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.media-container__close {
+    position: absolute;
+    top: auto;
+    bottom: 16px;
+}
+
+.media-container__layout {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    max-width: 640px;
+    max-height: 100%;
+}
+
+.close {
+    display: block;
+
+    height: 30px;
+    padding: 0 18px;
+
+    color: black;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+
+    line-height: 30px;
+}
+
+.media-content {
+    margin: 0 24px;
+}
+
+.media-content__header {
+    text-align: center;
+
+    border-bottom: 1px solid #4d4d4d;
+}
+
+.media-content__article {
+    padding-bottom: 24px;
+}
+
+.heading,
+.subheading,
+.article {
+    cursor: text;
+}
+
+.heading,
+.subheading {
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    font-size: 32px;
+    line-height: 1;
+}
+
+.subheading {
+    margin-bottom: 0;
+
+    font-size: 24px;
+}
+
+.article {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+@media only screen and (min-width: 768px) {
+    .media-container__layout {
+        overflow: initial;
+    }
+
+    .media-container__close {
+        top: 16px;
+        right: 16px;
+        bottom: auto;
+    }
+
+    .close {
+        overflow: hidden;
+
+        width: 48px;
+        height: 48px;
+
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        opacity: 0.4;
+        color: transparent;
+        background: url('icons/x.png') center center no-repeat;
+        background-size: 32px;
+    }
+
+    .close:hover {
+        opacity: 1;
+    }
+}

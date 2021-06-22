@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Grodno VR</title>
+    <style>body { margin: 0; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../static_assets/style.css" type="text/css" >
+  </head>
+  <body>
+    <script src="../third-party/webvr-polyfill.js"></script>
+    <script>
+      new WebVRPolyfill();
+    </script>
+    <script src="./client.bundle?platform=vr"></script>
+    <script>
+      // Initialize the React VR application
+      ReactVR.init(
+        '../index.vr.bundle?platform=vr&dev=true',
+        document.body
+      );
+    </script>
+  </body>
+</html>
+
